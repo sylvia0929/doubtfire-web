@@ -1,9 +1,14 @@
-import { Component, Input, Inject } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'timeout',
-  templateUrl: 'timeout.component.html',
+  templateUrl: './timeout.component.html',
 })
-export class TaskDescriptionCardComponent {
-  constructor() {}
+export class TimeoutComponent {
+  @Input() task: any;
+  @Input() taskDef: any;
+  @Input() unit: any;
 }
+
