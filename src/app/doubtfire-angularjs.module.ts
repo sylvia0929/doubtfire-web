@@ -226,6 +226,7 @@ import {MarkedPipe} from './common/pipes/marked.pipe';
 import {AlertService} from './common/services/alert.service';
 import {GradeService} from './common/services/grade.service';
 import {TimeoutComponent} from './errors/states/timeout/timeout.component';
+import {AnalyticsComponent} from './config/analytics/analytics.component';
 export const DoubtfireAngularJSModule = angular.module('doubtfire', [
   'doubtfire.config',
   'doubtfire.sessions',
@@ -464,6 +465,10 @@ DoubtfireAngularJSModule.directive(
   downgradeComponent({component: StatusIconComponent}),
 );
 DoubtfireAngularJSModule.directive('timeout', downgradeComponent({component: TimeoutComponent}));
+DoubtfireAngularJSModule.directive(
+  'analytics',
+  downgradeComponent({component: AnalyticsComponent}),
+);
 DoubtfireAngularJSModule.directive('newFUnits', downgradeComponent({component: FUnitsComponent}));
 
 // Global configuration

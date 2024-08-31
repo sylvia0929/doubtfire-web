@@ -225,10 +225,11 @@ import {TasksViewerComponent} from './units/states/tasks/tasks-viewer/tasks-view
 import {UnitCodeComponent} from './common/unit-code/unit-code.component';
 import {GradeService} from './common/services/grade.service';
 import {TimeoutComponent} from './errors/states/timeout/timeout.component';
-
+import {AnalyticsComponent} from './config/analytics/analytics.component';
 @NgModule({
   // Components we declare
   declarations: [
+    AnalyticsComponent,
     TimeoutComponent,
     AlertComponent,
     AboutDoubtfireModalContent,

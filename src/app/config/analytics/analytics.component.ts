@@ -3,11 +3,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'analytics',
+  selector: 'app-analytics',
   templateUrl: 'analytics.component.html',
   styleUrls: ['analytics.component.scss'],
 })
-export class TimeoutComponent {
+export class AnalyticsComponent {
   @Input() task: any;
   @Input() taskDef: any;
   @Input() unit: any;
