@@ -9,3 +9,4 @@ import { Unit } from 'src/app/api/models/unit';
 export class UnitAnalyticsComponent {
   @Input() unit: Unit;
 }
+
