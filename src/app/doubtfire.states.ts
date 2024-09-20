@@ -8,6 +8,10 @@ import {TeachingPeriodListComponent} from './admin/states/teaching-periods/teach
 import {AcceptEulaComponent} from './eula/accept-eula/accept-eula.component';
 import {FUsersComponent} from './admin/states/f-users/f-users.component';
 import {FUnitsComponent} from './admin/states/f-units/f-units.component';
+import { AppInjector } from './app-injector';
+import { UnitService } from './api/services/unit.service';
+import { firstValueFrom } from 'rxjs';
+import { UnitAnalyticsComponent } from './units/states/analytics/unit-analytics-route.component';
 
 /*
  * Use this file to store any states that are sourced by angular components.
@@ -269,7 +273,6 @@ const AdministerUnits: NgHybridStateDeclaration = {
   },
 };
 
-
 const ViewAllUnits: NgHybridStateDeclaration = {
   name: 'view-all-units',
   url: '/view-all-units',
@@ -291,6 +294,29 @@ const ViewAllUnits: NgHybridStateDeclaration = {
   },
 };
 
+
+const AnalyticsState: NgHybridStateDeclaration = {
+  name: 'units/analytics',
+  url: '/units/:unitId/analytics',
+  resolve: {
+    unit: async function ($stateParams: {unitId: number}) {
+      const unitService = AppInjector.get(UnitService);
+      return await firstValueFrom(unitService.get($stateParams.unitId));
+    },
+  },
+  views: {
+    main: {
+      component: UnitAnalyticsComponent,
+    },
+  },
+  data: {
+    task: 'Unit Analytics',
+    pageTitle: '_Home_',
+    roleWhitelist: ['Tutor', 'Convenor', 'Admin', 'Auditor']
+  },
+};
+
+
 /**
  * Export the list of states we have created in angular
  */
@@ -306,4 +332,5 @@ export const doubtfireStates = [
   ViewAllProjectsState,
   ViewAllUnits,
   AdministerUnits,
+  AnalyticsState,
 ];
