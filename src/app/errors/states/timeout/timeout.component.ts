@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import { Component, Input } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from 'src/app/api/services/authentication.service';
 
 @Component({
   selector: 'timeout',
   templateUrl: './timeout.component.html',
 })
-export class TimeoutComponent {
-  @Input() task: any;
-  @Input() taskDef: any;
-  @Input() unit: any;
+export class TimeoutComponent implements OnInit {
+  constructor(private authenticationService: AuthenticationService) {}
+  ngOnInit(): void {
+    this.authenticationService.signOut(false);
+  }
 }
-

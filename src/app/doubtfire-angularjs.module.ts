@@ -11,7 +11,7 @@ import {downgradeInjectable, downgradeComponent} from '@angular/upgrade/static';
 // Here are the old angular node modules, previously loaded via grunt
 //#region
 import 'angular-cookies/angular-cookies.js';
-import 'angular-local-storage/dist/angular-local-storage.js';
+import 'angular-local-sftorage/dist/angular-local-storage.js';
 import 'angular-resource/angular-resource.js';
 import 'angular-ui-bootstrap/ui-bootstrap-tpls.js';
 import 'angular-nvd3/dist/angular-nvd3.js';
@@ -136,7 +136,6 @@ import 'build/src/app/sessions/auth/http-auth-injector.js';
 import 'build/src/app/sessions/sessions.js';
 import 'build/src/app/errors/errors.js';
 import 'build/src/app/errors/states/unauthorised/unauthorised.js';
-import 'build/src/app/errors/states/timeout/timeout.js';
 import 'build/src/app/errors/states/states.js';
 import 'build/src/common/utilService/utilService.js';
 import 'build/src/common/i18n/localize.js';
@@ -224,7 +223,6 @@ import {FUnitsComponent} from './admin/states/f-units/f-units.component';
 import {MarkedPipe} from './common/pipes/marked.pipe';
 import {AlertService} from './common/services/alert.service';
 import {GradeService} from './common/services/grade.service';
-import {TimeoutComponent} from './errors/states/timeout/timeout.component';
 import {TaskScormCardComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-scorm-card/task-scorm-card.component';
 
 export const DoubtfireAngularJSModule = angular.module('doubtfire', [
@@ -464,7 +462,6 @@ DoubtfireAngularJSModule.directive(
   'statusIcon',
   downgradeComponent({component: StatusIconComponent}),
 );
-DoubtfireAngularJSModule.directive('timeout', downgradeComponent({component: TimeoutComponent}));
 DoubtfireAngularJSModule.directive('newFUnits', downgradeComponent({component: FUnitsComponent}));
 
 // Global configuration

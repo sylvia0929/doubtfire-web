@@ -9,6 +9,7 @@ import {AcceptEulaComponent} from './eula/accept-eula/accept-eula.component';
 import {FUsersComponent} from './admin/states/f-users/f-users.component';
 import {FUnitsComponent} from './admin/states/f-units/f-units.component';
 import {ScormPlayerComponent} from './common/scorm-player/scorm-player.component';
+import { TimeoutComponent } from './errors/states/timeout/timeout.component';
 
 /*
  * Use this file to store any states that are sourced by angular components.
@@ -390,6 +391,18 @@ const ScormPlayerReviewState: NgHybridStateDeclaration = {
   },
 };
 
+const TimeoutState: NgHybridStateDeclaration = {
+  name: 'timeout',
+  url: '/timeout?dest&params',
+  views: {
+    main: {
+      component: TimeoutComponent,
+    },
+  },
+  data: {
+    pageTitle: '_Timeout_',
+  },
+};
 /**
  * Export the list of states we have created in angular
  */
@@ -408,4 +421,5 @@ export const doubtfireStates = [
   ScormPlayerNormalState,
   ScormPlayerReviewState,
   ScormPlayerStudentReviewState,
+  TimeoutState
 ];
