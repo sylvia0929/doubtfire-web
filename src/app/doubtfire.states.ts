@@ -8,6 +8,11 @@ import {TeachingPeriodListComponent} from './admin/states/teaching-periods/teach
 import {AcceptEulaComponent} from './eula/accept-eula/accept-eula.component';
 import {FUsersComponent} from './admin/states/f-users/f-users.component';
 import {FUnitsComponent} from './admin/states/f-units/f-units.component';
+import {ScormPlayerComponent} from './common/scorm-player/scorm-player.component';
+import {UnitAnalyticsComponent} from './units/states/analytics/unit-analytics-route.component';
+import {firstValueFrom} from 'rxjs';
+import {AppInjector} from './app-injector';
+import {UnitService} from './api/services/unit.service';
 
 /*
  * Use this file to store any states that are sourced by angular components.
@@ -427,4 +432,8 @@ export const doubtfireStates = [
   ViewAllProjectsState,
   ViewAllUnits,
   AdministerUnits,
+  ScorePlayerNormalState,
+  ScorePlayerReviewState,
+  ScorePlayerStudentReviewState,
+  AnalyticsState,
 ];
