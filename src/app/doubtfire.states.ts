@@ -432,8 +432,8 @@ export const doubtfireStates = [
   ViewAllProjectsState,
   ViewAllUnits,
   AdministerUnits,
-  ScorePlayerNormalState,
-  ScorePlayerReviewState,
-  ScorePlayerStudentReviewState,
+  ScormPlayerNormalState,
+  ScormPlayerReviewState,
+  ScormPlayerStudentReviewState,
   AnalyticsState,
 ];
